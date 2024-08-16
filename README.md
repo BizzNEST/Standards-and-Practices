@@ -53,16 +53,15 @@
 - [Homebrew](https://brew.sh/)
 - [nvm](https://www.wdiaz.org/how-to-install-nvm-with-homebrew/)
 - Either [Visual Studio Code](https://code.visualstudio.com/download) or your preferred code editor.
-- Install Android Studio if applicable.
 - Install the regular version of Visual Studio (Community Edition or higher) if required by your project.
 
 #### Account Setup
 
 You will need to schedule time with a team lead to gain access to the following:
 
-##### WPE Account
-
-- Familiarize yourself with [AWS JavaScript SDK](https://aws.amazon.com/sdk-for-node-js/) and [AWS whitepapers](https://aws.amazon.com/whitepapers/).
+- WPE (Wordpress Engine)
+- AWS (Amazon Web Services - Coming Soon)
+- GitHub Organization (should be here if your look at this ;))
 
 ##### BizzNEST Project and Team Meetings
 

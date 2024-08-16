@@ -1,114 +1,94 @@
+# BizzNEST Standards and Practices
 
-## How to Assign an Issue to Yourself
+## Purpose of this Repository
 
-1. Navigate to the **Issues** tab in the GitHub repository.
-2. Browse through available issues or create a new one if necessary.
-3. Choose an issue you'd like to work on and click on it to open the details.
-4. Comment on the issue mentioning that you'd like to handle it.
-5. If the maintainers approve, they might assign the issue to you officially.
+- Establish and maintain high standards for BizzNEST projects.
+- Provide a central repository for team members to share knowledge and best practices.
+- Serve as a reference point for starting new projects or addressing common questions.
 
-## Working on a New Feature Branch
+[Click Here](/standards/contributing.md) to contribute!
 
-1. Ensure you have the latest changes from the `main` branch:
-    - git checkout main
-    - git pull origin main
-2. Create a new branch for your feature:
-    - git checkout -b your-initials-issue-number-feature-name
-    - Replace `feature-name` with a descriptive name for your feature.
-        - ex: git checkout -b ar-5-header-navigation
-3. Make changes, write code, and commit your work:
-    - git add .
-    - git commit -m "Description of changes made"
+## Code of Conduct
 
-## Pushing Changes to GitHub
-
-1. Push your feature branch to the remote repository:
-    - git push origin feature-name
-
-## Initiating a Pull Request
-
-1. Go to the repository on GitHub and switch to your feature branch.
-2. Click on the "New pull request" button.
-3. Compare changes between your feature branch and the `main` branch.
-4. Fill in details about your changes in the pull request template.
-5. Submit the pull request.
-
-## Peer Code Review
-
-1. Share the link to your pull request with your peers or team members.
-2. Ask for their review and feedback on the changes.
-3. Peers can add comments, suggestions, or approve the pull request.
-4. Address any feedback or comments and make necessary changes in your branch.
-5. Once approved, a maintainer can merge your pull request into the `main` branch.
-
-### Git Commands
-
-- To clone a repository from GitHub onto your local machine
-  - `git clone https://github.com/Shift3/ancestreeLiveV3.git`
-- Add all changes to be tracked:
-  - `git add .`
-- Commit tracked changes:
-  - `git commit -m "type(scope):body"`
-  - [Follow commit conventions found at this link](commits.md)
-- Push changes up to GitHub
-  - `git push`
-
-Get the latest changes:
-
-- Check out development  
-   `git checkout development`
-- Pull from development  
-   `git pull`
-- Change to my branch  
-   `git checkout your-branch-name`
-- Merge from development  
-   `git merge development`
-
-## Commit Messages
-
-### Your commit messages should be formatted as follows:
-
-Short message example (`git commit -m "..."`):
-
-`type(scope):subject`
-
-Long message example (`git commit`):
-```
-type(scope):subject
-(blank line)
-body
-```
-
-`type`: Select one of the following 8 commit types. These are your _only_ options for commit type:
-
-- **_feat_**: A new feature for the application user. Rolling out a new module, new piece of functionality, etc.
-- **_fix_**: Bug fix to your production code. Dealing with GH Issues, fixing a bug, etc.
-- **_docs_**: Changes to your documentation. Adding a comment, editing a comment, changing README.md files, etc.
-- **_style_**: Changes to your code formatting. _This does **not** address CSS styling_ but rather the style of your code. Reformatting, adding semi-colons, etc.
-- **_refactor_**: Refactor to production code. Upgrading a package and changing your code to meet the new demands, changing a **let** or a **const** name, etc.
-- **_test_**: All things that apply to unit testing. Creating tests, refactoring tests, etc. No changes to production code occur.
-- **_chore_**: Updating gulp, webpack, package.json files. This is developer-facing _only_.
-- **_workaround_**: Temporary fix until a more robust solution is found or until other factors are resolved.
-
-`scope`: Narrow the scope of the commit to a one or two word description in parentheses
-
-`subject`: Favor imperative mood, present tense, active voice, and start with verbs. Don't use a period at the end. Think of it as a newspaper headline.
-
-`body` (optional): If necessary, provide additional context that can help other developers in the future. This is normally unnecessary but some use cases are:
-
-- If the commit contains a new package you've added to the project
-- If the commit contains a change to your build that you need to notate
-- If the commit includes changes that would benefit from an explanation and from additional context.
-- If the commit is the last in a series that will become a Pull Request and you want to communicate something to your senior developer.
-
-Remember to communicate effectively, follow project guidelines, and be open to feedback during the entire process.
-
-Happy contributing!
+1. Maintain professionalism in all communications.
+2. Keep requests and issues relevant to the work at BizzNEST.
+3. Treat everyone with respect—no exceptions.
+4. Collaborate, have fun, and share your knowledge!
 
 
+#### Git
 
+- **Workflow**: Follow the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow:
+  - Maintain `main` and `development` branches.
+  - Branch off `development` for new features.
+  - Request code reviews for your Pull Requests to `development`.
+  - Merge reviewed code into `development`.
+  - For milestone completion, create a `release` branch from `development`, QA it, then merge into `main` (tag it) and back into `development`.
+  - For hotfixes, branch off `main`, fix the issue, then merge back into `main` (tag it) and `development`.
+  - ![Gitflow diagram](https://nvie.com/img/git-model@2x.png) Credit: <https://nvie.com/posts/a-successful-git-branching-model/>
+- [Branching](/standards/branching.md) at BizzNEST
+- [Commit Messages](/standards/commits.md) at BizzNEST
 
+#### Code Versioning
 
+- [BizzNEST SemVer](/standards/code-versioning.md)
 
+#### Project Setup
 
+- [Using GitHub Projects](/standards/project-setup.md) to track progress.
+- [Readme Guidelines](/standards/readme-guidelines.md) for project documentation.
+- [EditorConfig](/best-practices/development-tools/editorconfig.md) for consistent code style.
 
+#### Code Review
+
+- [Code Review](/standards/code-reviews.md#process) process at BizzNEST:
+  - [Code Review Slides](https://docs.google.com/presentation/d/16S4qMbwdBT2u9c3-djHhSRXoUUytf12HGxloWh4y4cE/edit#slide=id.g35f391192_00)
+- [Acceptance Testing](/standards/acceptance-testing.md)
+- [Bug Reporting](/standards/bug-reporting.md)
+
+#### Machine Setup
+
+##### Mac: Install
+
+- [Homebrew](https://brew.sh/)
+- [nvm](https://www.wdiaz.org/how-to-install-nvm-with-homebrew/)
+- Either [Visual Studio Code](https://code.visualstudio.com/download) or your preferred code editor.
+- Install Android Studio if applicable.
+- Install the regular version of Visual Studio (Community Edition or higher) if required by your project.
+
+#### Account Setup
+
+You will need to schedule time with a team lead to gain access to the following:
+
+##### WPE Account
+
+- Familiarize yourself with [AWS JavaScript SDK](https://aws.amazon.com/sdk-for-node-js/) and [AWS whitepapers](https://aws.amazon.com/whitepapers/).
+
+##### BizzNEST Project and Team Meetings
+
+- **Weekly Project Meetings**: Held every week to discuss project-specific progress, blockers, and next steps.
+- **Monthly All-Team Meetings**: Once a month, all team members gather to share accomplishments, discuss workflows, and address any team-wide issues.
+
+## Need Help?
+
+Getting stuck happens to the best of us. If you're blocked for more than 45 minutes, here's where you can get help:
+
+##### Problem Solving
+
+- [Problem Solving Guide](standards/problem-solving.md)
+
+##### Communication Channels
+
+1. **Your team channel**: Post questions in your private team channel. Your lead may help you through blockers.
+
+#### Problem Solving
+
+Before reaching out, attempt to resolve issues on your own. Here's a resource to improve your problem-solving skills:
+
+- [How to Think Like a Programmer](https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/)
+
+## Contributing to BizzNEST
+
+Contributions to our processes are expected. You can contribute in many ways, such as leading a BizzNEST Developer Connect meeting, writing a markdown sheet on a topic you're passionate about, leading a workshop, or posting in BizzNEST's technical discussions channel.
+
+[Click Here](/standards/contributing.md) to start contributing.

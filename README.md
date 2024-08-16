@@ -1,8 +1,3 @@
-# Contributing to Collaboration Project
-
-## Link To Design
-https://www.figma.com/file/rFf8t4tP0HiY3tf5i5cRPx/Untitled?type=design&node-id=0-1&mode=design&t=MEyVe5YN0rlHWECk-0
-
 
 ## How to Assign an Issue to Yourself
 

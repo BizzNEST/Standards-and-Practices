@@ -29,7 +29,9 @@
 - [Advanced Custom Fields (ACF)](#advanced-custom-fields-acf)
   - [Creating an ACF](#creating-an-acf)
 - [Short Code](#short-code)
-
+  - [Creating Short Code through Child Themes](#creating-short-code-in-child-theme)
+  - [Creating Short Code through WP Code](#creating-short-code-wp-code)
+- [FAQ](#faq)
 
 
 ### Pre-requisite

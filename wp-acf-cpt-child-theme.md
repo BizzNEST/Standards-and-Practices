@@ -1,8 +1,8 @@
-# Intro to ACFs, CPTs, Child Themes, and Short Code
+# Intro to Child Themes, CPTs, ACFs, and Short Code
 
 ## Purpose of this Document
 
-- An Introduction to Advanced Custom Fields (ACF), Custom Post Types (CPT), Child Themes, and Short Code
+- An Introduction to Child Themes, Custom Post Types (CPT), Advanced Custom Fields (ACF), and Short Code
 - Common practices and how / when to use these.
 
 ## Summary
@@ -39,3 +39,44 @@ The purpose of a child theme in WordPress is to allow you to modify or add funct
 
 > \[!NOTE]\
 > If you are unsure if a project needs custom / complex solution. Then I still believe it doesn't hurt making a child theme.
+
+#### Creating A Child Theme
+
+1. Create a child theme directory in your theme folder (usually named `parent-theme-child`) and create a `functions.php` and `style.css` file.
+   
+![image](https://github.com/user-attachments/assets/8dde035f-ce5c-4460-b594-f18349d99eb7)
+
+2. Enqueue parent styles into your `functions.php`
+
+```php []
+<?php
+// Enqueue parent and child theme styles
+function spectra_child_enqueue_styles() {
+  // Enqueue parent theme styles
+  wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+  
+  // Enqueue child theme styles, making sure it's loaded after the parent styles
+  wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'), null);
+}
+```
+3. Write the commented top portion (Theme Name, Template, Description, Author, and version), and import parent styles.
+
+```css []
+/*
+Theme Name: Spectra One Child
+Template: spectra-one
+Description: A child theme for the Spectra One theme.
+Author: Eli Manzo
+Version: 1.0.0
+*/
+
+/* Import parent theme styles */
+@import url("../spectra/style.css");
+
+/* Add your custom styles below */
+```
+
+4. If it all works, then you can activate your theme in WordPress
+
+![image](https://github.com/user-attachments/assets/f4fdfdfa-ed68-4cf2-a897-49545f17dff2)
+

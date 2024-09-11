@@ -12,9 +12,25 @@
 - Use Advanced Custom Fields (ACF) when you need more control over the way content is managed, displayed, and structured within custom post types, pages, or even default post types. (Use ACF plugin)
 - Use shortcodes in when you need a simple way to add dynamic or complex custom content into posts, pages, or widgets. (This can be done in writing in theme files or plugins)
 
-
 > \[!NOTE]\
 > **Small disclaimer:** This is a basic overview of these tools, to learn more about this content, feel free to explore WP API + Other common practices, and make a PR to add on to this document.
+
+
+## Table of Contents
+- [Purpose of this Document](#purpose-of-this-document)
+- [Summary](#summary)
+- [Pre-requisite](#pre-requisite)
+- [Child Themes](#child-themes)
+  - [When to use Child Themes](#when-to-use-child-themes)
+  - [When not to use Child Themes](#when-not-to-use-child-themes)
+  - [Creating a Child Theme](#creating-a-child-theme)
+- [Custom Post Type](#custom-post-type-cpt)
+  - [Creating a CPT](#creating-a-cpt)
+- [Advanced Custom Fields (ACF)](#advanced-custom-fields-acf)
+  - [Creating an ACF](#creating-an-acf)
+- [Short Code](#short-code)
+
+
 
 ### Pre-requisite
 1. Install Spectra-One Plugin
@@ -122,9 +138,9 @@ Use custom post types in WordPress when you need to organize and manage differen
 
 ![image](https://github.com/user-attachments/assets/fc9285a0-a468-409b-be1f-6a4fc42681df)
 
-### Advanced Custom Field (ACF)
+### Advanced Custom Fields (ACF)
 
-You'd want to use Advanced Custom Fields (ACF) in WordPress when you need more control over the way content is managed, displayed, and structured within custom post types, pages, or even default post types. Here are some situations where ACF is useful:
+You'd want to use d Custom Fields (ACF) in WordPress when you need more control over the way content is managed, displayed, and structured within custom post types, pages, or even default post types. Here are some situations where ACF is useful:
 
 1. **Custom Data Entry Fields:** If your site requires complex or structured data input (e.g., contact details, event dates, image galleries), ACF allows you to create custom fields that make it easy for content creators to add structured data without requiring them to mess with HTML or shortcodes.
 

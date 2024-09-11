@@ -18,10 +18,10 @@
 
 ### Pre-requisite
 1. Install Spectra-One Plugin
-2. An IDE of your choice (VS code)
+2. Install an IDE of your choice (VS code)
 3. Install ACF plugin or CPT UI plugin
-4. Install Meta Field Block
-5. Install WP Code (or any other plugin that allows you to input shortcode)
+4. Install Meta Field Block plugin
+6. Install WP Code (or any other plugin that allows you to input shortcode)
 
 ### Child Themes
 
@@ -189,7 +189,7 @@ Use shortcodes in WordPress when you need a simple way to add dynamic or complex
 
 8. **Custom Queries:** If you need to display specific posts or custom content based on certain criteria (e.g., showing posts from a certain category or tag), shortcodes allow you to easily write custom queries and display that content without manually altering theme files.
 
-### Creating Short Code (In Child Theme)
+#### Creating Short Code (In Child Theme)
 
 In the ACF section we started to realize that we needed a more custom solution to display our ACF to our custom `Project` post. In this section I will show you how to do that through the child theme files
 
@@ -361,4 +361,39 @@ add_shortcode('project_details', 'display_project_details'); // short code hook 
 
 ![image](https://github.com/user-attachments/assets/1ff47d19-e2c1-40b3-bdf0-83a76c1b5c1f)
 
+#### Creating Short Code (WP Code)
+1. Same thing as before you can create shortcode in WP code (We can use the same code as before, but remove the `ob_start()` and `ob_get_clean()` (these were calls for dealing with dynamic PHP output that needs buffering, and the WP Code plugin has conflicts with this)
+  - Make sure to use the right code type (PHP)
+  - WP code generates a short code id to use, so make sure you use that call in WP editor
 
+![image](https://github.com/user-attachments/assets/d83e0d41-364b-42ac-b32b-9e4010d6cfb7)
+
+2. For the styles, we can use the same styles above, and put them to another WP Code block
+   - Make sure to drop down the code type to CSS
+   - Make sure to insert in the site wide header
+   
+![image](https://github.com/user-attachments/assets/8dd1165e-56eb-40ad-89a4-20683ba20b40)
+
+3. Use the new short code generated id
+
+![image](https://github.com/user-attachments/assets/29577ed4-31be-4ae9-9843-123892ecb839)
+
+4. Congrats! You made your own shortcode through the plugin!
+
+![image](https://github.com/user-attachments/assets/2b9b8b6d-9802-4411-83e4-01fb5522ce21)
+
+### FAQ
+
+1. Couldn't I write these shortcode in the Parent Theme files
+   - You could, but there's a lot of conflicts you would need to deal with to be able to display the custom code you'd want (for ex. below, we'd even need to get proper directory / namespace just to display "Hello World")
+   - Theme updates could break the site if your short code conflicts
+   - It's proper practice to always create a child theme for WordPress projects
+
+```php []
+// This was done in spectra parent theme functions.php
+function hello_world() {
+	echo 'Hello World!';
+}
+
+add_shortcode( 'hello-world', __NAMESPACE__ . '\\hello_world' );
+```

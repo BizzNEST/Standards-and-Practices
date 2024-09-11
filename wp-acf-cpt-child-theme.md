@@ -13,7 +13,7 @@
 - Use shortcodes in when you need a simple way to add dynamic or complex custom content into posts, pages, or widgets. (This can be done in writing in theme files or plugins)
 
 > \[!NOTE]\
-> **Small disclaimer:** This is a basic overview of these tools, to learn more about this content, feel free to explore WP API + Other common practices, and make a PR to add on to this document.
+> **Small disclaimer:** This is a basic overview of these tools, to learn more about this content, feel free to explore WP API + Other common practices, and make a PR to add on to this document. The [WordPress API](https://developer.wordpress.org/reference/) also has a lot of resources for more.
 
 
 ## Table of Contents

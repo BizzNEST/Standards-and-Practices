@@ -152,14 +152,14 @@ You'd want to use Advanced Custom Fields (ACF) in WordPress when you need more c
 
 ![image](https://github.com/user-attachments/assets/f4c161d9-ada9-4910-9192-8a5c1228ffea)
 
-3. Congrats you've made ACFs for your Posts! You can view it at the bottom of the editor, or if you didn't include an editor to your post types they should be displated in the admin dashboard like below.
+3. Congrats you've made ACFs for your Posts! You can view it at the bottom of the editor, or if you didn't include an editor to your post types they should be displayed in the admin dashboard.
 
 ![image](https://github.com/user-attachments/assets/5aa356a7-7f28-413c-88dc-2e46dc082ce9)
 
 4. Display ACFs can be done by installing plugins (Meta Field Block plugin), and in the WPE editor hook the field ids to the post
 
 > \[!WARNING]\
-> ACF Pro has a setting to have more customization, but since we have the free version, we'd need to install a plugin to display the ACFs. This plugin only displays the text of the ACF, and quickly you'll start to realize that you need a more custom solution (ex. having a link be a button instead of a text), and you'll have to rely on short codes for that
+> ACF Pro has settings to have more customization, but since we have the free version, we'd need to install a plugin to display the ACFs. This plugin only displays the text of the ACF, and quickly you'll start to realize that you need a more custom solution (ex. having a link be a button instead of a text), and you'll have to rely on short codes for that
 
 #### In WPE Editor
 
@@ -188,5 +188,177 @@ Use shortcodes in WordPress when you need a simple way to add dynamic or complex
 7. **Conditional Content Display:** Shortcodes can also be written to display content conditionally based on certain criteria, like user roles, logged-in status, or custom field values.
 
 8. **Custom Queries:** If you need to display specific posts or custom content based on certain criteria (e.g., showing posts from a certain category or tag), shortcodes allow you to easily write custom queries and display that content without manually altering theme files.
+
+### Creating Short Code (In Child Theme)
+
+In the ACF section we started to realize that we needed a more custom solution to display our ACF to our custom `Project` post. In this section I will show you how to do that through the child theme files
+
+> \[!TIP]\
+> Most of the code below will use calls from the [Word Press API](https://developer.wordpress.org/apis/). I recommend reading some of the APIs called and how it all functions together.
+
+1. In `functions.php` write code to display project details (There are comments in the code to understand some of the api / syntax)
+
+```php []
+function display_project_details() {
+  // Only run on singular 'projects' posts
+  if (!is_singular('project')) {
+    return 'This shortcode can only be used on project posts.';
+  }
+
+  ob_start(); // Start output buffering
+
+  // Get the ACF fields for the current post
+  $description = get_field('project_description');
+  $tools_used = get_field('project_tools');
+  $link = get_field('project_link');
+
+  // Get the post title
+  $title = get_the_title();
+  // Get the featured image
+  $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); // You can specify other sizes like 'thumbnail', 'medium', etc.
+
+  // Output the project details
+  echo '<div class="project-details">'; // Start the container div
+
+  // Output the title
+  if ($title) {
+    echo '<h1 class="project-title">' . esc_html($title) . '</h1>';
+  }
+
+  // Output the featured image if it exists
+  if ($featured_image_url) {
+    echo '<div class="project-featured-image">';
+    echo '<img src="' . esc_url($featured_image_url) . '" alt="' . get_the_title() . '">';
+    echo '</div>';
+  }
+
+  if ($description) {
+    echo '<h4><strong>Details</strong></h4>';
+    echo '<p>' . esc_html($description) . '</p>';
+  }
+
+  if ($tools_used) {
+    echo '<p><strong>Tools Used:</strong> ' . esc_html($tools_used) . '</p>';
+  }
+
+  // Output the link as a button
+  if ($link) {
+    echo '<a href="' . esc_url($link) . '" class="project-button" target="_blank" rel="noopener noreferrer">Visit Project</a>';
+  }
+
+  echo '</div>'; // End the container div
+
+  return ob_get_clean(); // Return the output buffer content
+}
+
+add_shortcode('project_details', 'display_project_details'); // short code hook for WP editor
+```
+
+2. Style your code in the `style.css`
+
+```css []
+.project-details {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 15px;
+}
+
+.project-details p strong {
+  font-weight: bold;
+}
+
+.project-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0073e6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center; /* Ensure text is centered within button */
+}
+
+.project-button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+.project-button:active {
+  background-color: #004a9b;
+}
+
+.project-featured-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-featured-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  text-align: center; /* Center the title */
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0 0 15px 0; /* Add margin-bottom to create space below the title */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 40px; /* Smaller title font size on tablets and mobile devices */
+  }
+
+  .project-details p {
+    font-size: 14px; /* Adjust paragraph font size */
+  }
+
+  .project-button {
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 14px; /* Adjust button font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title {
+    font-size: 30px; /* Smaller title font size on mobile devices */
+  }
+
+  .project-details {
+    padding: 15px; /* Adjust container padding */
+  }
+
+  .project-details p {
+    font-size: 12px; /* Further reduce paragraph font size */
+  }
+
+  .project-button {
+    padding: 8px 16px; /* Adjust button padding */
+    font-size: 12px; /* Further reduce button font size */
+  }
+}
+```
+
+3. Go into WordPress Editor, add the shortcode block, and hook it onto the id you use to reference in `functions.php` (We used `project_details`)
+
+![image](https://github.com/user-attachments/assets/a4784b09-4453-4cb1-9acf-08df91c7fbfc)
+
+4. Now you can see your custom styled ACFs + Posts
+
+![image](https://github.com/user-attachments/assets/1ff47d19-e2c1-40b3-bdf0-83a76c1b5c1f)
 
 

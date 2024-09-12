@@ -142,7 +142,7 @@ Use custom post types in WordPress when you need to organize and manage differen
 
 ### Advanced Custom Fields (ACF)
 
-You'd want to use d Custom Fields (ACF) in WordPress when you need more control over the way content is managed, displayed, and structured within custom post types, pages, or even default post types. Here are some situations where ACF is useful:
+Use Advanced Custom Fields (ACF) in WordPress when you need more control over the way content is managed, displayed, and structured within custom post types, pages, or even default post types. Here are some situations where ACF is useful:
 
 1. **Custom Data Entry Fields:** If your site requires complex or structured data input (e.g., contact details, event dates, image galleries), ACF allows you to create custom fields that make it easy for content creators to add structured data without requiring them to mess with HTML or shortcodes.
 
@@ -383,12 +383,14 @@ add_shortcode('project_details', 'display_project_details'); // short code hook 
 1. Same thing as before you can create shortcode in WP code (We can use the same code as before, but remove the `ob_start()` and `ob_get_clean()` (these were calls for dealing with dynamic PHP output that needs buffering, and the WP Code plugin has conflicts with this)
   - Make sure to use the right code type (PHP)
   - WP code generates a short code id to use, so make sure you use that call in WP editor
+  - Activate the Short Code with the toggle on the top right
 
 ![image](https://github.com/user-attachments/assets/d83e0d41-364b-42ac-b32b-9e4010d6cfb7)
 
 2. For the styles, we can use the same styles above, and put them to another WP Code block
    - Make sure to drop down the code type to CSS
    - Make sure to insert in the site wide header
+   - Activate the CSS with the toggle on the top right.
    
 ![image](https://github.com/user-attachments/assets/8dd1165e-56eb-40ad-89a4-20683ba20b40)
 

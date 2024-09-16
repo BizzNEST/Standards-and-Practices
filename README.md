@@ -28,21 +28,14 @@
 - [Branching](/standards/branching.md) at BizzNEST
 - [Commit Messages](/standards/commits.md) at BizzNEST
 
-#### Code Versioning
-
-- [BizzNEST SemVer](/standards/code-versioning.md)
-
 #### Project Setup
 
 - [Using GitHub Projects](/standards/project-setup.md) to track progress.
 - [Readme Guidelines](/standards/readme-guidelines.md) for project documentation.
-- [EditorConfig](/best-practices/development-tools/editorconfig.md) for consistent code style.
 
 #### Code Review
 
 - [Code Review](/standards/code-reviews.md#process) process at BizzNEST:
-  - [Code Review Slides](https://docs.google.com/presentation/d/16S4qMbwdBT2u9c3-djHhSRXoUUytf12HGxloWh4y4cE/edit#slide=id.g35f391192_00)
-- [Acceptance Testing](/standards/acceptance-testing.md)
 - [Bug Reporting](/standards/bug-reporting.md)
 
 #### Machine Setup
@@ -70,10 +63,6 @@ You will need to schedule time with a team lead to gain access to the following:
 ## Need Help?
 
 Getting stuck happens to the best of us. If you're blocked for more than 45 minutes, here's where you can get help:
-
-##### Problem Solving
-
-- [Problem Solving Guide](standards/problem-solving.md)
 
 ##### Communication Channels
 

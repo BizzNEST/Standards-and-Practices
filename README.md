@@ -25,7 +25,6 @@
   - Merge reviewed code into `development`.
   - For milestone completion, create a `release` branch from `development`, QA it, then merge into `main` (tag it) and back into `development`.
   - For hotfixes, branch off `main`, fix the issue, then merge back into `main` (tag it) and `development`.
-  - ![Gitflow diagram](https://nvie.com/img/git-model@2x.png) Credit: <https://nvie.com/posts/a-successful-git-branching-model/>
 - [Branching](/standards/branching.md) at BizzNEST
 - [Commit Messages](/standards/commits.md) at BizzNEST
 

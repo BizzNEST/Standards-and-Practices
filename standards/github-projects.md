@@ -1,6 +1,6 @@
 # Creating New GitHub Repositories
 
-This documentaion will detail basic procedure and best practices for creating repositories on Digital Nest's GitHub organization.
+This documentation will detail basic procedure and best practices for creating repositories on Digital Nest's GitHub organization.
 
 ## Initial Creation
 
@@ -27,7 +27,7 @@ This documentaion will detail basic procedure and best practices for creating re
     >
     > #### Description
     >
-    > 1. Define the scope of the repository (Ex. if it's for a project or documenation, etc.)
+    > 1. Define the scope of the repository (Ex. if it's for a project or documentation, etc.)
     >
     > ### Access
     >

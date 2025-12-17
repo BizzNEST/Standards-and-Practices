@@ -33,6 +33,10 @@
 - [Using GitHub Projects](/standards/project-setup.md) to track progress.
 - [Readme Guidelines](/standards/readme-guidelines.md) for project documentation.
 
+#### Code Formatting
+  CSS
+  - [Class Naming with BEM](/standards/css-naming-bestPractice.md) at BizzNEST
+
 #### Code Review
 
 - [Code Review](/standards/code-reviews.md#process) process at BizzNEST:

@@ -33,6 +33,10 @@
 - [Using GitHub Projects](/standards/project-setup.md) to track progress.
 - [Readme Guidelines](/standards/readme-guidelines.md) for project documentation.
 
+#### Accessibility
+
+- [Accessibility Best Practices](/best-practices/accessibility.md) — Lighthouse audits, semantic HTML, keyboard navigation, color contrast, and more.
+
 #### Code Formatting
   CSS
   - [Class Naming with BEM](/standards/css-naming-bestPractice.md) at BizzNEST
@@ -41,6 +45,15 @@
 
 - [Code Review](/standards/code-reviews.md#process) process at BizzNEST:
 - [Bug Reporting](/standards/bug-reporting.md)
+
+#### Security
+
+- [Security Standards](/security/README.md)
+- [Secure Development](/security/secure-development.md)
+- [Data Protection](/security/data-protection.md)
+- [AI Usage Policy](/security/ai-usage-policy.md)
+- [Secrets Management](/security/secrets-management.md)
+- [Incident Response](/security/incident-response.md)
 
 #### Machine Setup
 

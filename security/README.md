@@ -9,3 +9,5 @@ These guides cover how we keep our code, data, and systems safe at BizzNEST. Eve
 - [AI Usage Policy](ai-usage-policy.md)
 - [Secrets Management](secrets-management.md)
 - [Incident Response](incident-response.md)
+- [Incident Report Template](incident-report-template.md)
+- [Incident Report Example](incident-report-example.md)

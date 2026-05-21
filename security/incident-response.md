@@ -83,6 +83,8 @@ Within 48 hours of containment, the team conducts a blameless post-mortem:
 - **Honest** — we document exactly what happened, even if it's embarrassing.
 - **Actionable** — every post-mortem must produce at least one concrete preventive measure.
 
+Use the [Incident Report Template](incident-report-template.md) to document the incident. See the [Incident Report Example](incident-report-example.md) for a completed sample.
+
 ### Post-Mortem Template
 
 1. **Summary** — One paragraph describing the incident.

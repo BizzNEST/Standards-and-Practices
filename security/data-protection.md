@@ -87,16 +87,3 @@ Our code and business logic are company assets. Protecting them is part of your 
 > **DO**: Remember that NDA agreements cover code, architecture, and business logic.
 >
 > **DON'T**: Discuss project internals in public Discord servers, forums, or social media.
-
----
-
-## Quick Reference
-
-| Data Type | Can I... | Answer |
-|---|---|---|
-| API Keys | Commit to Git? | **Never** |
-| Customer emails | Put in logs? | **No** — use user IDs instead |
-| Production DB | Copy to my laptop? | **No** — use seed data |
-| Project code | Post on Stack Overflow? | **No** — keep it private |
-| Internal URLs | Share in screenshots? | **No** — redact them first |
-| Test credentials | Share over Slack? | **No** — use a password manager |

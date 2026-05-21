@@ -6,3 +6,4 @@
 - [Local and WP Engine Deployment](local-and-wpe-deployment-best-practices.md)
 - [Adding Users to WordPress Dashboard](adding-users-phpadmin-wpdashboard.md)
 - [SFTP into WP Engine Environment](wpe-sftp.md)
+- [Accessibility Best Practices](accessibility.md)

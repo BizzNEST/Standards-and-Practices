@@ -1,0 +1,3 @@
+### Docker Standards Request
+
+Would like to see some standards and best practices written for Docker in the repo, and guidelines for containerizing our custom API's.

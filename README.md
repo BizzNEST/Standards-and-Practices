@@ -96,3 +96,5 @@ Before reaching out, attempt to resolve issues on your own. Here's a resource to
 Contributions to our processes are expected. You can contribute in many ways, such as leading a BizzNEST Developer Connect meeting, writing a markdown sheet on a topic you're passionate about, leading a workshop, or posting in BizzNEST's technical discussions channel.
 
 [Click Here](/standards/contributing.md) to start contributing.
+
+Hello there.

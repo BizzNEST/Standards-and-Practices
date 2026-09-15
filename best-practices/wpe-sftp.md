@@ -14,7 +14,7 @@ This document will guide you through the process of using SFTP to connect to a W
 
 ### Step 1(WPE):
 
-1. Sing in to WPE.
+1. Sign in to WPE.
 2. Navigate to the site and environment you want to SFTP into.
 3. Go to Users and SFTP tab.
 4. Select SFTP Users.

@@ -16,7 +16,6 @@
 4. Collaborate, have fun, and share your knowledge!
 
 
-#### Git
 
 - **Workflow**: Follow the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow:
   - Maintain `main` and `development` branches.
@@ -78,7 +77,7 @@ You will need to schedule time with a team lead to gain access to the following:
 - **Monthly All-Team Meetings**: Once a month, all team members gather to share accomplishments, discuss workflows, and address any team-wide issues.
 
 ## Need Help?
-
+   
 Getting stuck happens to the best of us. If you're blocked for more than 45 minutes, here's where you can get help:
 
 ##### Communication Channels

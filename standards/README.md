@@ -11,3 +11,4 @@
 - [Project Setup Guidelines](project-setup.md)
 - [README Guidelines](readme-guidelines.md)
 - [Tech Stack Comparison](tech-stack-comp.md)
+- [Millo Test](milloTest.md)

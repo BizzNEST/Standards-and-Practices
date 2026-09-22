@@ -3,9 +3,9 @@
 ```
 Main
 L- Staging
-L- Development
-   L- *Feature Branch*
-   L- *Bug fix branch*
+  L- Development
+    L- *Feature Branch*
+    L- *Bug fix branch*
 ```
 
 **Main** branch is for finalized, tested, and production-ready code.

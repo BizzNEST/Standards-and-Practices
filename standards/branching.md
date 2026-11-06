@@ -8,11 +8,11 @@ L- Development
    L- *Bug fix branch*
 ```
 
-**Main** branch is for finalized, tested, and production-ready code.
+**Main** branch is for finalized, tested, and production-ready code. It is the default branch, and on many projects merging into it deploys to production.
 
-**Staging** branch is for finalized, tested, and demo-ready code.
+**Staging** branch is for finalized, tested, and demo-ready code. It is optional: projects without client demos go straight from `development` to `main`.
 
-Working branch will be **development**. Pushes to development require Pull Request and review.
+Working branch will be **development**. Pushes to development require a Pull Request and review. GitHub pre-selects `main` when you open a PR, so change the base branch to `development`.
 
 Sub-branches of development will be used to isolate tasks that are being worked on. These are for new features, fixes, or other tasks.
 
@@ -26,11 +26,21 @@ Where:
 
 For example, if I'm (Alex) working on an bug fix task, I'll create a branch such as `ar-111-fix-uploader`.
 
-When work is completed and tested, make a Pull Request to the development branch. This PR requires review from another developer before it is merged.
+When work is completed and tested, make a Pull Request to the development branch. This PR requires approval from a teammate on the project before it is merged. See [Code Reviews](code-reviews.md).
 
-When code is ready to be locked in for demo, a Pull Request from `development` to `staging` will be created and reviewed.
+When code is ready to be locked in for demo, a Pull Request from `development` to `staging` will be created and approved by someone in `@BizzNEST/leads`.
 
-When code is ready to be deployed, a Pull Request from `development` to `main` will be created and reviewed.
+When code is ready to be deployed, a Pull Request from `development` (or `staging`) to `main` will be created and approved by `@BizzNEST/admins`.
+
+### Hotfixes
+
+Urgent production fixes are the one exception to branching off `development`:
+
+1. Branch off `main`: `hotfix-<initials>-<issue#>-<small-description>` (e.g. `hotfix-ar-140-login`).
+2. Open a Pull Request into `main`, approved by `@BizzNEST/admins`.
+3. Open a second Pull Request bringing the same fix into `development`, so it isn't lost on the next release.
+
+On project repos, GitHub only accepts PRs into `staging` from `development`, and into `main` from `development`, `staging` or a `hotfix-` branch.
 
 ### Doing Development
 
@@ -41,7 +51,7 @@ When code is ready to be deployed, a Pull Request from `development` to `main` w
 
 ### Bug Fixing
 
-- If fixing a bug or issue reference the issue in the branch ex: `git checkout -b bugName_1`
+- If fixing a bug or issue reference the issue in the branch ex: `git checkout -b ar-111-fix-uploader`
 - Also, include the issue number in the commit message to link to the issue ex: `git commit -m "type(scope):body. resolves #1"`
 
 

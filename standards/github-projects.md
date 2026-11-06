@@ -2,6 +2,31 @@
 
 This documentation will detail basic procedure and best practices for creating repositories on Digital Nest's GitHub organization.
 
+## Project Repos vs. Your Own Repos
+
+- **Project repos** (client or internal projects) are created by `@BizzNEST/admins` at project kickoff. You don't create these. You get added to the project's team (`@BizzNEST/proj-<name>`), which gives you access. See [Joining a Project](#joining-a-project).
+- **Practice and learning repos** are yours to create, following the steps below. Only you and the admins can see them until you share them.
+
+## Joining a Project
+
+When you're added to a project team:
+
+1. **Install Betterleaks once per machine** (secret scanning):
+   - Windows: `winget install Betterleaks.Betterleaks`
+   - macOS: `brew install betterleaks`
+2. **Clone the repo and install:**
+   ```sh
+   git clone https://github.com/BizzNEST/<repo>.git
+   cd <repo>
+   git checkout development
+   npm i
+   ```
+   `npm i` also installs the pre-commit secret scan.
+3. **Branch off `development`** and open your Pull Requests **into `development`**. GitHub pre-selects `main`, so change the base branch.
+4. **Get 1 approval from a teammate** on the project before merging. See [Code Reviews](code-reviews.md) for who approves what.
+
+If you lose access to a repo, ask an admin to check your project team membership.
+
 ## Initial Creation
 
 1. Ensure you are on the [BizzNEST organization page](https://github.com/BizzNEST)

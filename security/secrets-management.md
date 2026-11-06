@@ -64,22 +64,32 @@ Secrets should not live forever. Rotate them regularly and immediately if compro
 
 ---
 
-## Pre-Commit Protection
+## Secret Scanning
 
-Set up tools that prevent you from accidentally committing secrets.
+BizzNEST repos scan for secrets with [Betterleaks](https://github.com/betterleaks/betterleaks) in two places:
 
-### Recommended: git-secrets
+1. **On your machine, before each commit** (a pre-commit hook installed by Lefthook).
+2. **On GitHub, for every Pull Request** (the `scan / betterleaks` check). On project repos a PR can't merge until it passes.
+
+### Set Up (once per machine)
 
 ```bash
-# Install
-brew install git-secrets
+# Windows
+winget install Betterleaks.Betterleaks
 
-# Set up in your repo
-git secrets --install
-git secrets --register-aws  # blocks AWS keys automatically
+# macOS
+brew install betterleaks
 ```
 
-You can also add custom patterns for your project's secrets (e.g., internal API key prefixes).
+Restart your terminal, then run `npm install` in each repo you work in (Python repos: `lefthook install`). That installs the pre-commit hook.
+
+### If the Scan Flags Something
+
+- **Real secret:** don't push. Follow [What To Do If You Commit a Secret](#what-to-do-if-you-commit-a-secret).
+- **False positive (test data, example values):** add a `betterleaks:allow` comment on that line, or open a PR to the allowlist in [security-config](https://github.com/BizzNEST/security-config).
+- Use `git commit --no-verify` **only** for confirmed false positives. The GitHub check still runs, so a skipped secret is caught there.
+
+Setup details, the shared config and how to add a repo live in [security-config](https://github.com/BizzNEST/security-config).
 
 ---
 
@@ -89,10 +99,12 @@ This is critical — **deleting the commit is NOT enough.** The secret is in you
 
 ### Immediate Steps
 
-1. **Rotate the secret immediately.** Generate a new key/password and update it wherever it's used.
-2. **Revoke the old secret.** Deactivate it in the provider's dashboard (AWS, Stripe, Firebase, etc.).
-3. **Tell your team lead.** They need to know so they can assess impact.
+1. **Tell an org admin (`@BizzNEST/admins`) right away.** Name the repo, file and service. **Never paste the secret itself.** No blame: reporting fast matters more than anything else.
+2. **Rotate the secret immediately.** Generate a new key/password and update it wherever it's used.
+3. **Revoke the old secret.** Deactivate it in the provider's dashboard (AWS, Stripe, Firebase, etc.).
 4. **Do NOT force-push to "hide" it.** Others may have already pulled the commit.
+
+A secret that reached GitHub counts as leaked, even in a private repo and even on a feature branch.
 
 ### After Containment
 
@@ -110,4 +122,5 @@ This is critical — **deleting the commit is NOT enough.** The secret is in you
 | Setting up a new project | Create `.gitignore` with `.env*` BEFORE your first commit |
 | Reviewing a PR | Check that no secrets are hardcoded or visible in diffs |
 | Deploying to production | Use the hosting platform's environment variable settings |
-| Accidentally committed a secret | Rotate immediately, then notify your lead |
+| Scan flagged test data | Add a `betterleaks:allow` comment on that line |
+| Accidentally committed a secret | Tell `@BizzNEST/admins` immediately, then rotate |

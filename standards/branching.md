@@ -30,14 +30,14 @@ When work is completed and tested, make a Pull Request to the development branch
 
 When code is ready to be locked in for demo, a Pull Request from `development` to `staging` will be created and approved by someone in `@BizzNEST/leads`.
 
-When code is ready to be deployed, a Pull Request from `development` (or `staging`) to `main` will be created and approved by Eli Manzo or Alex Rodriguez.
+When code is ready to be deployed, a Pull Request from `development` (or `staging`) to `main` will be created and approved by `@BizzNEST/admins`.
 
 ### Hotfixes
 
 Urgent production fixes are the one exception to branching off `development`:
 
 1. Branch off `main`: `hotfix-<initials>-<issue#>-<small-description>` (e.g. `hotfix-ar-140-login`).
-2. Open a Pull Request into `main`, approved by Eli Manzo or Alex Rodriguez.
+2. Open a Pull Request into `main`, approved by `@BizzNEST/admins`.
 3. Open a second Pull Request bringing the same fix into `development`, so it isn't lost on the next release.
 
 On project repos, GitHub only accepts PRs into `staging` from `development`, and into `main` from `development`, `staging` or a `hotfix-` branch.

@@ -99,7 +99,7 @@ This is critical — **deleting the commit is NOT enough.** The secret is in you
 
 ### Immediate Steps
 
-1. **Tell Eli Manzo or Alex Rodriguez right away.** Name the repo, file and service. **Never paste the secret itself.** No blame: reporting fast matters more than anything else.
+1. **Tell an org admin (`@BizzNEST/admins`) right away.** Name the repo, file and service. **Never paste the secret itself.** No blame: reporting fast matters more than anything else.
 2. **Rotate the secret immediately.** Generate a new key/password and update it wherever it's used.
 3. **Revoke the old secret.** Deactivate it in the provider's dashboard (AWS, Stripe, Firebase, etc.).
 4. **Do NOT force-push to "hide" it.** Others may have already pulled the commit.
@@ -123,4 +123,4 @@ A secret that reached GitHub counts as leaked, even in a private repo and even o
 | Reviewing a PR | Check that no secrets are hardcoded or visible in diffs |
 | Deploying to production | Use the hosting platform's environment variable settings |
 | Scan flagged test data | Add a `betterleaks:allow` comment on that line |
-| Accidentally committed a secret | Tell Eli or Alex immediately, then rotate |
+| Accidentally committed a secret | Tell `@BizzNEST/admins` immediately, then rotate |

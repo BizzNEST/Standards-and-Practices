@@ -17,9 +17,9 @@ Code reviews help us catch bugs before they reach production, share knowledge ac
 | Pull Request | Approved by |
 |---|---|
 | Task branch → `development` | 1 teammate on the project |
-| Changes to sensitive paths (CI, deploy, infra, secret-scan config) | Eli Manzo or Alex Rodriguez, in addition to the teammate |
+| Changes to sensitive paths (CI, deploy, infra, secret-scan config) | `@BizzNEST/admins`, in addition to the teammate |
 | `development` → `staging` | Someone in `@BizzNEST/leads` |
-| `development`, `staging` or `hotfix-` branch → `main` | Eli Manzo or Alex Rodriguez |
+| `development`, `staging` or `hotfix-` branch → `main` | `@BizzNEST/admins` |
 
 On project repos GitHub enforces this:
 
